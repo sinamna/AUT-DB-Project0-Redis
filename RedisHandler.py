@@ -18,12 +18,14 @@ class RedisHandler:
 
     def fetch(self,key):
         if not self.client.exists(key):
+            print("false", end='\n')
             return
         value = self.client.get(key).decode("utf-8")
-        print("false", end='\n')
+        print("true", end='\n')
         print(value)
 
-    def update(self):
-        pass
+    def update(self,key,val):
+        if self.client.exists(key):
+
     def delete(self):
         pass
