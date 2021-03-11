@@ -9,7 +9,7 @@ class RedisHandler:
 
     # implementing CRUD opetions
     def set(self,key,value):
-        if not self.client.exists(key):
+        if self.client.exists(key):
             print("false",end='\n')
             return
         self.client.set(key,value)
