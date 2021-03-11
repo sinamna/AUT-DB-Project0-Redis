@@ -26,6 +26,9 @@ class RedisHandler:
 
     def update(self,key,val):
         if self.client.exists(key):
-
+            self.client.set(key,val)
+            print("true",end="\n")
+            return
+        print("false",end="\n")
     def delete(self):
         pass
