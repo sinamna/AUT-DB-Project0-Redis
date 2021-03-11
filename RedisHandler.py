@@ -30,5 +30,10 @@ class RedisHandler:
             print("true",end="\n")
             return
         print("false",end="\n")
-    def delete(self):
-        pass
+    def delete(self,key):
+        if self.client.exists(key):
+            self.client.delete(key)
+            print("true",end="\n")
+            return
+        print("false", end="\n")
+
