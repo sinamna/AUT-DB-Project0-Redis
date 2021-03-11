@@ -4,9 +4,8 @@ class RedisHandler:
     client to handler redis operations
 
     """
-    def __init__(self,host,port):
-        self.client=redis.Redis(host=host,port=port)
-
+    def __init__(self, redisClient):
+        self.client=redisClient
 
     # implementing CRUD opetions
     def set(self,key,value):
